@@ -248,4 +248,7 @@
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/oat/arm64/services.odex"</item>
    </string-array>
+
+   <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
+   <bool name="config_useRoundIcon">true</bool>
 </resources>

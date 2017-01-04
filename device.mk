@@ -296,3 +296,54 @@ $(call inherit-product-if-exists, vendor/htc/flounder/audio/tfa/device-vendor-tf
 # Add dependency of the proprietary keystore.flounder module.
 PRODUCT_PACKAGES += \
     libkeymaster_messages
+
+# nAOSP changes
+
+# Superuser
+PRODUCT_PACKAGES += \
+    su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=3
+
+PRODUCT_PACKAGES += \
+    Launcher3
+
+# Busybox
+PRODUCT_PACKAGES += \
+    busybox
+
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    device/htc/flounder/bootanimation.zip:system/media/bootanimation.zip
+
+# ROM Updater
+ifeq ($(ROM_BUILD_NUM),)
+  $(error No ROM_BUILD_NUM defined. please export the value (export ROM_BUILD_NUM=xx))
+endif
+
+PRODUCT_PACKAGES += \
+    ROMUpdater
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.version.updater=nAOSProm-7.1.1-flounder-b$(ROM_BUILD_NUM) \
+    persist.rom.updater.uri=http://bit.ly/2hFHoSR
+
+# ViPER4Android
+PRODUCT_PACKAGES += \
+    ViPER4Android \
+    libv4a_fx_ics
+
+PRODUCT_COPY_FILES += \
+    device/htc/flounder/audio_effects.conf:system/etc/audio_effects.conf \
+    packages/apps/ViPER4AndroidFX/android_4.x-5.x/libs/armeabi/libV4AJniUtils.so:system/app/ViPER4Android/lib/arm/libV4AJniUtils.so
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    lpa.use-stagefright=false
+
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    device/htc/flounder/custom/backuptool/backuptool.sh:install/bin/backuptool.sh \
+    device/htc/flounder/custom/backuptool/backuptool.functions:install/bin/backuptool.functions \
+    device/htc/flounder/custom/backuptool/50-base.sh:system/addon.d/50-base.sh
+

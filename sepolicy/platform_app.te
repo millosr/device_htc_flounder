@@ -1,0 +1,9 @@
+#ROM Updater
+set_prop(platform_app, system_prop)
+
+#QS ADB over Network
+set_prop(platform_app, ctl_default_prop)
+set_prop(platform_app, shell_prop)
+
+#Allow NFC service to be found
+allow platform_app nfc_service:service_manager find;

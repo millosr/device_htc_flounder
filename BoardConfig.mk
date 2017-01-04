@@ -123,3 +123,11 @@ USE_CLANG_PLATFORM_BUILD := true
 
 # Use the non-open-source parts, if they're present
 -include vendor/htc/flounder/BoardConfigVendor.mk
+
+#nAOSP
+
+# ViPER4Android
+VIPER4ANDROID_MODE := NEON
+
+# custom ota
+BOARD_CUSTOM_OTA_MK := device/htc/flounder/custom/customota.mk

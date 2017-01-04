@@ -9,3 +9,6 @@ type gpu_freq_device, dev_type;
 
 # mmc rpmb partition block device
 type mmc_rpmb_block_device, dev_type;
+
+#Superuser Embedded
+type su_device, dev_type, mlstrustedobject;
