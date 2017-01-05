@@ -19,3 +19,6 @@ type sysfs_socinfo, sysfs_type, fs_type;
 type sysfs_tegra_fuse, sysfs_type, fs_type;
 
 type debugfs_nvmap, debugfs_type, fs_type;
+
+# Themes
+type theme_data_file, file_type, data_file_type;

@@ -251,8 +251,8 @@ PRODUCT_PACKAGES += \
 	VolantisKeyboard
 
 # for launcher layout
-PRODUCT_PACKAGES += \
-    VolantisLayout
+#PRODUCT_PACKAGES += \
+#    VolantisLayout
 
 # Allows healthd to boot directly from charger mode rather than initiating a reboot.
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -274,17 +274,6 @@ ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
     $(call add-product-dex-preopt-module-config,services,--generate-mini-debug-info)
     $(call add-product-dex-preopt-module-config,wifi-service,--generate-mini-debug-info)
 endif
-
-# add verity dependencies
-$(call inherit-product, build/target/product/verity.mk)
-PRODUCT_SUPPORTS_BOOT_SIGNER := false
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/sdhci-tegra.3/by-name/APP
-PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/sdhci-tegra.3/by-name/VNR
-
-# for warning
-PRODUCT_PACKAGES += \
-    slideshow \
-    verity_warning_images
 
 $(call inherit-product-if-exists, hardware/nvidia/tegra132/tegra132.mk)
 $(call inherit-product-if-exists, vendor/nvidia/proprietary-tegra132/tegra132-vendor.mk)
@@ -346,4 +335,9 @@ PRODUCT_COPY_FILES += \
     device/htc/flounder/custom/backuptool/backuptool.sh:install/bin/backuptool.sh \
     device/htc/flounder/custom/backuptool/backuptool.functions:install/bin/backuptool.functions \
     device/htc/flounder/custom/backuptool/50-base.sh:system/addon.d/50-base.sh
+
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false \
+    dalvik.vm.dex2oat-threads=5
 

@@ -55,6 +55,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2782920704
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
+BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
 
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_USES_GENERIC_INVENSENSE := false
@@ -108,7 +109,9 @@ endif
 # Don't dex preopt apps to avoid I/O congestion due to paging larger sized
 # pre-compiled .odex files as opposed to background generated interpret-only
 # odex files.
-WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+#WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+
+WITH_DEXPREOPT := true
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/flounder
 

@@ -23,8 +23,6 @@
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-        rild \
-        CarrierConfig \
         Launcher3
 
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -33,8 +31,9 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/htc/flounder/product.mk)
-$(call inherit-product, device/htc/flounder/device-lte.mk)
-$(call inherit-product-if-exists, vendor/htc/flounder_lte/device-vendor.mk)
+#$(call inherit-product, device/htc/flounder/device-lte.mk)
+$(call inherit-product-if-exists, vendor/htc/flounder/device-vendor.mk)
+#$(call inherit-product-if-exists, vendor/htc/flounder_lte/device-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 PRODUCT_NAME := aosp_flounder
@@ -42,4 +41,3 @@ PRODUCT_DEVICE := flounder
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := AOSP on Flounder
 PRODUCT_MANUFACTURER := HTC
-PRODUCT_RESTRICT_VENDOR_FILES := owner path
