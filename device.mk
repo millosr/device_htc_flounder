@@ -319,16 +319,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rom.updater.uri=http://bit.ly/2hFHoSR
 
 # ViPER4Android
-PRODUCT_PACKAGES += \
-    ViPER4Android \
-    libv4a_fx_ics
+#PRODUCT_PACKAGES += \
+#    ViPER4Android \
+#    libv4a_fx_ics
 
-PRODUCT_COPY_FILES += \
-    device/htc/flounder/audio_effects.conf:system/etc/audio_effects.conf \
-    packages/apps/ViPER4AndroidFX/android_4.x-5.x/libs/armeabi/libV4AJniUtils.so:system/app/ViPER4Android/lib/arm/libV4AJniUtils.so
+#PRODUCT_COPY_FILES += \
+#    device/htc/flounder/audio_effects.conf:system/etc/audio_effects.conf
+#    packages/apps/ViPER4AndroidFX/android_4.x-5.x/libs/armeabi/libV4AJniUtils.so:system/app/ViPER4Android/lib/arm/libV4AJniUtils.so
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.use-stagefright=false
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    lpa.use-stagefright=false
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
