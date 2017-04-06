@@ -315,7 +315,7 @@ PRODUCT_PACKAGES += \
     ROMUpdater
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.version.updater=nAOSProm-7.1.1-flounder-b$(ROM_BUILD_NUM) \
+    ro.build.version.updater=nAOSProm-7.1.2-flounder-b$(ROM_BUILD_NUM) \
     persist.rom.updater.uri=http://bit.ly/2hFHoSR
 
 # ViPER4Android
